@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv='Cache-Control' content='no-cache, no-store, must-revalidate' />
+    <meta http-equiv='Pragma' content='no-cache' />
+    <meta http-equiv='Expires' content='0' />
+</head>
+
+<body>
+
+    <script>
+        console.log(window.location);
+        const url = new URL(window.location);
+
+        const params = new URLSearchParams(url.search);
+        const code = params.get('code');
+        const location = params.get('location');
+        const accounts_server = params.get('accounts-server');
+
+        const callback = localStorage.getItem('callback');
+        localStorage.removeItem('callback');
+
+        window.location.href =
+            callback +
+            '?code=' + code +
+            '&location=' + location +
+            '&accounts_server=' + accounts_server;
+
+    </script>
+
+    <p>Redirecting ...</p>
+
+</body>
+
+</html>
