@@ -13,6 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: create folder
+        run: mkdir ./dist
+
+      - name: copy files
+        run: cp *.html ./dist
+
       - name: list files
         run: find ./dist
 
