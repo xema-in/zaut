@@ -11,7 +11,7 @@
 <body>
 
     <script>
-        console.log(window.location);
+        // console.log(window.location);
         const url = new URL(window.location);
 
         const params = new URLSearchParams(url.search);
@@ -29,7 +29,7 @@
 
         localStorage.setItem('callback', callback);
 
-        var scope = 'ZOHOPEOPLE.forms.ALL';
+        var scope = 'ZOHOPEOPLE.attendance.CREATE';
         var client_id = '1000.3GTDN06RUCNZTPXHDWCENG936K8W9Z';
         var access_type = 'offline';
         var redirect_uri = 'https://zaut.xema.in/response.html';
