@@ -9,8 +9,19 @@
 <body>
 
     <script>
-        console.log('hello');
         console.log(window.location);
+        const url = new URL(window.location);
+
+        const params = new URLSearchParams(url.search);
+        const scope = params.get('scope');
+        const client_id = params.get('client_id');
+        const access_type = params.get('access_type');
+        const redirect_uri = params.get('redirect_uri');
+        console.log('scope', scope);
+        console.log('client_id', client_id);
+        console.log('access_type', access_type);
+        console.log('redirect_uri', redirect_uri);
+
     </script>
 
     <p>Redirecting ...</p>

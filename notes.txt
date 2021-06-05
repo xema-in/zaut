@@ -1,1 +1,1 @@
-cp *.html dist
+rm dist/* && cp *.html dist
