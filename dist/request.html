@@ -3,9 +3,9 @@
 <html>
 
 <head>
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv='Cache-Control' content='no-cache, no-store, must-revalidate' />
+    <meta http-equiv='Pragma' content='no-cache' />
+    <meta http-equiv='Expires' content='0' />
 </head>
 
 <body>
@@ -15,14 +15,32 @@
         const url = new URL(window.location);
 
         const params = new URLSearchParams(url.search);
-        const scope = params.get('scope');
-        const client_id = params.get('client_id');
-        const access_type = params.get('access_type');
-        const redirect_uri = params.get('redirect_uri');
-        console.log('scope', scope);
-        console.log('client_id', client_id);
-        console.log('access_type', access_type);
-        console.log('redirect_uri', redirect_uri);
+        // const scope = params.get('scope');
+        // const client_id = params.get('client_id');
+        // const access_type = params.get('access_type');
+        // const redirect_uri = params.get('redirect_uri');
+        // console.log('scope', scope);
+        // console.log('client_id', client_id);
+        // console.log('access_type', access_type);
+        // console.log('redirect_uri', redirect_uri);
+
+        const callback = params.get('callback');
+        // console.log('callback', callback);
+
+        localStorage.setItem('callback', callback);
+
+        var scope = 'ZOHOPEOPLE.forms.ALL';
+        var client_id = '1000.3GTDN06RUCNZTPXHDWCENG936K8W9Z';
+        var access_type = 'offline';
+        var redirect_uri = 'https://zaut.xema.in/response.html';
+
+        window.location.href =
+            'https://accounts.zoho.com/oauth/v2/auth' +
+            '?scope=' + scope +
+            '&client_id=' + client_id +
+            '&response_type=code' +
+            '&access_type=' + access_type +
+            '&redirect_uri=' + redirect_uri;
 
     </script>
 
